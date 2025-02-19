@@ -1,0 +1,73 @@
+#slider {
+  position: relative;
+  height: 280px;
+  width: 100vw;
+  padding: 16px;
+  background-color: lightpink;
+}
+
+#slider .slider-wrapper {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  background-color: lightblue; /* Initializing the counter for the cards */
+}
+
+#slider .btn {
+  z-index: 2;
+  position: absolute;
+  padding: 16px;
+  background-color: cornflowerblue;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#slider .left {
+  left: 8px;
+}
+
+#slider .right {
+  right: 8px;
+}
+
+#slider .slider-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.card {
+  position: relative;
+  counter-increment: card-index;
+  flex-shrink: 0;
+  height: 100%;
+  width: 180px;
+  background-color: lightgoldenrodyellow;
+}
+
+.card::after {
+  position: absolute;
+  content: counter(card-index);
+  font-size: 4rem;
+  font-weight: 700;
+  color: cornflowerblue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
